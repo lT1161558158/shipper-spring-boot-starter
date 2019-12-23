@@ -1,11 +1,11 @@
 package oh.my.shipperSpringBootStarter.builder;
 
 import lombok.extern.slf4j.Slf4j;
-import oh.my.shipper.core.api.Handler;
-import oh.my.shipper.core.builder.HandlerBuilder;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
+import top.trister.shipper.core.api.Handler;
+import top.trister.shipper.core.builder.HandlerBuilder;
 
 /**
  * spring 的 handlerBuilder

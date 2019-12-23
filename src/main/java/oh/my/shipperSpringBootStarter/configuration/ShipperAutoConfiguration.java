@@ -1,17 +1,20 @@
 package oh.my.shipperSpringBootStarter.configuration;
 
 import lombok.extern.slf4j.Slf4j;
-import oh.my.shipper.core.builder.*;
-import oh.my.shipper.core.executor.ShipperExecutor;
-import oh.my.shipper.core.executor.StandardShipperExecutor;
 import oh.my.shipperSpringBootStarter.builder.SpringHandlerBuilder;
 import oh.my.shipperSpringBootStarter.executor.SpringShipperExecutor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.context.annotation.Bean;
+import top.trister.shipper.core.builder.*;
+import top.trister.shipper.core.executor.ShipperExecutor;
+import top.trister.shipper.core.executor.StandardShipperExecutor;
 
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 //@ConditionalOnClass(ShipperExecutor.class)
 
