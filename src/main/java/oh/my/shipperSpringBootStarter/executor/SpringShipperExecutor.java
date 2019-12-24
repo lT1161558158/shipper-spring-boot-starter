@@ -4,10 +4,11 @@ package oh.my.shipperSpringBootStarter.executor;
 import org.springframework.context.EnvironmentAware;
 import org.springframework.core.env.Environment;
 import top.trister.shipper.core.executor.ShipperExecutor;
-import top.trister.shipper.core.task.ShipperTaskFuture;
+import top.trister.shipper.core.task.ShipperTask;
 
 import javax.annotation.PreDestroy;
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
 /**
  * 代理了shipper的提交和执行,在执行之前先进行spel的模板解析
@@ -31,7 +32,7 @@ public class SpringShipperExecutor implements ShipperExecutor, EnvironmentAware 
     }
 
     @Override
-    public List<ShipperTaskFuture> submit(String shipper) {
+    public List<CompletableFuture<ShipperTask>> submit(String shipper) {
         return shipperExecutor.submit(spelEval(shipper));
     }
 
